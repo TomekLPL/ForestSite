@@ -1,0 +1,125 @@
+@media (min-width: 992px) {
+	.nav {
+		&-desktop {
+			position: sticky;
+			top: 0;
+			display: block;
+			background-color: #fff;
+			z-index: 1000;
+		}
+
+		&__elements {
+			display: flex;
+			justify-content: space-between;
+			align-items: center;
+		}
+
+		&__brand {
+			&-link {
+				display: flex;
+				padding: 30px 30px;
+				text-decoration: none;
+				color: u.$black;
+				transition: color 0.3s;
+
+				.fa-tree {
+					font-size: 36px;
+				}
+
+				.company-name {
+					font-size: 36px;
+				}
+
+				&:hover {
+					color: u.$main-color;
+				}
+			}
+		}
+
+		&__link {
+			&-desktop {
+				text-decoration: none;
+				font-size: 28px;
+				color: u.$black;
+				padding: 34.5px 40px;
+				transition: background-color 0.3s, color 0.3s;
+
+				&:hover {
+					color: u.$white;
+					background-color: u.$black;
+				}
+			}
+		}
+	}
+
+	.burger-btn {
+		display: none;
+	}
+
+	.header {
+		background-image: u.$hero-gradient, url('../img/jungle-1807476_1280.jpg');
+		// background-image: url('../img/jungle-1807476_1280.jpg');
+
+		&__heading {
+			font-size: 3.8rem;
+		}
+	}
+
+	.section-heading {
+		font-size: 3.6rem;
+	}
+
+	.section-padding {
+		padding: 4em 2em;
+	}
+
+	.aboutus {
+		&__title {
+			font-size: 2.4rem;
+		}
+
+		&__text {
+			letter-spacing: 0.1rem;
+			line-height: 3.4rem;
+		}
+	}
+
+	.hero-img {
+		@include u.heroImages('../img/girl-5785590_1280.jpg');
+
+		.wrapper {
+			padding: 0 8em;
+		}
+
+		&__title {
+			font-size: 4rem;
+		}
+	}
+
+	.offer {
+		&__text {
+			font-size: 2.4rem;
+		}
+
+		&__card {
+			&-info {
+				&-title {
+					font-size: 3rem;
+				}
+
+				&-price {
+					font-size: 4rem;
+				}
+
+				&-list {
+					line-height: 3rem;
+					font-size: 2rem;
+				}
+			}
+
+			&-btn {
+				font-size: 1.8rem;
+			}
+		}
+	}
+}

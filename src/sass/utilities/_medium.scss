@@ -1,0 +1,113 @@
+@media (min-width: 768px) {
+	.header {
+		&__heading {
+			font-size: 3.2rem;
+		}
+	}
+	.section-heading {
+		font-size: 3.2rem;
+	}
+
+	.section-padding {
+		padding: 3em 2em;
+	}
+
+	.aboutus {
+		&__title {
+			font-size: 2rem;
+		}
+
+		&__text {
+			font-size: 1.6rem;
+			line-height: 2.6rem;
+		}
+
+		&__box {
+			&-text {
+				margin-top: 0.5em;
+			}
+		}
+	}
+
+	.hero-img {
+		&__title {
+			font-size: 3.4rem;
+		}
+	}
+
+	.offer {
+		&__text {
+			font-size: 2rem;
+		}
+
+		&__box {
+			display: flex;
+			flex-direction: row;
+			flex-wrap: wrap;
+		}
+
+		&__card {
+			&-info {
+				&-title {
+					font-size: 2.8rem;
+				}
+
+				&-price {
+					font-size: 3.8rem;
+				}
+
+				&-list {
+					font-size: 1.8rem;
+				}
+			}
+
+			&-btn {
+				font-size: 1.6rem;
+			}
+		}
+	}
+
+	.footer {
+		&__boxes {
+			display: flex;
+			justify-content: space-between;
+		}
+
+		&__box-desktop {
+			display: block;
+		}
+
+		&__box-logo {
+			margin-top: 1rem;
+			margin-left: 6rem;
+			font-size: 3.5rem;
+		}
+
+		&__box-title {
+			font-size: 2rem;
+			margin-bottom: 1rem;
+		}
+
+		&__box {
+			margin: 0 2em;
+			width: 25%;
+
+			&:first-child {
+				width: 75%;
+			}
+		}
+
+		&__box-list {
+			list-style: none;
+		}
+
+		&__box-list-item {
+			margin-bottom: 1em;
+
+			a {
+				color: u.$black;
+				text-decoration: none;
+			}
+		}
+	}
+}

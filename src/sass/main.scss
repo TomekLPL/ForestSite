@@ -1,0 +1,292 @@
+@use 'utilities' as u;
+
+*,
+*::before,
+*::after {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth !important;
+}
+
+body {
+	font-family: 'Roboto', sans-serif;
+	font-size: 1.6rem;
+	color: u.$black;
+	background-color: u.$white;
+	// overflow: hidden;
+}
+
+// BURGER BTN
+.burger-btn {
+	position: fixed;
+	top: 20px;
+	left: 20px;
+	padding: 1em;
+	background: none;
+	border: 1px solid transparent;
+	cursor: pointer;
+	z-index: 100;
+
+	&:focus {
+		outline: none;
+		border: 1px solid black;
+		border-radius: 8px;
+	}
+
+	&:hover {
+		.burger-btn__bars::after,
+		.burger-btn__bars::before {
+			width: 100%;
+		}
+	}
+
+	&__box {
+		position: relative;
+		width: 40px;
+		height: 30px;
+	}
+
+	&__bars,
+	&__bars::after,
+	&__bars::before {
+		@include u.burgerBtn;
+	}
+
+	&__bars {
+		width: 100%;
+
+		&::after {
+			top: 13px;
+			width: 60%;
+		}
+
+		&::before {
+			top: 27px;
+			width: 30%;
+			transition-delay: 0.2s;
+		}
+	}
+}
+
+// NAV
+.nav {
+	&-mobile {
+		position: absolute;
+		top: 0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		flex-direction: column;
+		background-color: u.$white;
+		transform: translateX(-102%);
+		transition: transform 0.3s;
+		z-index: 10;
+
+		&--active {
+			transform: translateX(0%);
+		}
+	}
+
+	&-desktop {
+		display: none;
+	}
+
+	&__link {
+		position: relative;
+		display: inline-block;
+		margin: 0.5em;
+		padding: 0.5em;
+		font-size: 2.3rem;
+		color: u.$black;
+		text-decoration: none;
+		transition: color 0.3s;
+
+		&:hover {
+			color: u.$main-color;
+		}
+	}
+}
+
+// HEADER
+.header {
+	// position: relative;
+	height: 400px;
+	display: flex;
+	align-items: center;
+	@include u.heroImages('../img/jungle-1807476_640.jpg');
+	background-attachment: scroll;
+
+	&__heading {
+		display: flex;
+		flex-direction: column;
+		padding: 3rem;
+		font-size: 2.4rem;
+		color: u.$white;
+
+		.upper-title {
+			font-weight: 100;
+		}
+	}
+}
+
+// ABOUT US
+.aboutus {
+	&__box {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&__img {
+		width: 100%;
+		margin-bottom: 1em;
+	}
+
+	&__title {
+		margin-bottom: 0.5em;
+		font-size: 1.8rem;
+	}
+
+	&__text {
+		font-size: 1.4rem;
+		font-weight: 300;
+		letter-spacing: 0.1rem;
+		line-height: 1.8rem;
+	}
+}
+
+// HERO IMG
+.hero-img {
+	padding: 6em 2em;
+	@include u.heroImages('../img/girl-5785590_640.jpg');
+	text-align: center;
+
+	&__title {
+		padding: 1em 1em;
+		font-size: 2rem;
+		color: u.$white;
+		border: 1px solid u.$white;
+	}
+}
+
+// OFFER
+.offer {
+	&__text {
+		font-size: 1.8rem;
+		margin-bottom: 25px;
+		text-align: center;
+	}
+
+	&__box {
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+
+	&__card {
+		position: relative;
+		margin: 1em 1em;
+		height: 400px;
+		width: 300px;
+		box-shadow: 2px 2px 5px rgb(129, 129, 129);
+		border-radius: 5px;
+
+		&-info {
+			height: 100%;
+			display: flex;
+			flex-direction: column;
+			justify-content: space-evenly;
+			align-items: center;
+
+			&-title {
+				font-size: 2.6rem;
+				font-weight: 300;
+			}
+
+			&-price {
+				font-size: 3.6rem;
+				font-weight: bold;
+			}
+
+			&-list {
+				list-style: none;
+				line-height: 2.8rem;
+				font-size: 1.6rem;
+
+				&-item {
+					.fa-check {
+						color: u.$main-color;
+					}
+
+					&-off {
+						color: u.$off;
+					}
+				}
+			}
+		}
+
+		&-btn {
+			padding: 8px 60px;
+			border-radius: 8px;
+			border: none;
+			box-shadow: 2px 2px 5px rgb(129, 129, 129);
+			font-size: 1.4rem;
+			cursor: pointer;
+
+			&::before {
+				background-color: u.$light-gray;
+			}
+
+			&--highlighted {
+				background-color: u.$main-color;
+				box-shadow: 2px 2px 5px u.$main-color;
+
+				&::before {
+					background-color: u.$highlightedBtn;
+				}
+			}
+		}
+	}
+}
+
+//FOOTER
+.footer {
+	background-color: u.$light-gray;
+
+	.wrapper {
+		padding: 4em 2em 2em;
+	}
+
+	&__box {
+		font-size: 1.4rem;
+	}
+
+	&__box-desktop {
+		display: none;
+	}
+
+	&__box-logo {
+		display: flex;
+		margin-bottom: 0.5em;
+		font-size: 3rem;
+		font-weight: 300;
+		text-transform: uppercase;
+	}
+
+	&__bottom-text {
+		padding: 2em;
+		text-align: center;
+	}
+}
+
+@import './utilities/small';
+@import './utilities/medium';
+@import './utilities/large';
