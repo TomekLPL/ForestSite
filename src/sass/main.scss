@@ -21,6 +21,12 @@ body {
 	// overflow: hidden;
 }
 
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+	background-color: u.$black;
+}
+
 // BURGER BTN
 .burger-btn {
 	position: fixed;
@@ -76,16 +82,15 @@ body {
 // NAV
 .nav {
 	&-mobile {
-		position: absolute;
+		position: fixed;
 		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
+		width: 100vw;
+		height: 100vh;
 		display: flex;
 		justify-content: center;
 		align-items: center;
 		flex-direction: column;
-		background-color: u.$white;
+		background-color: u.$nav;
 		transform: translateX(-102%);
 		transition: transform 0.3s;
 		z-index: 10;
@@ -104,7 +109,7 @@ body {
 		display: inline-block;
 		margin: 0.5em;
 		padding: 0.5em;
-		font-size: 2.3rem;
+		font-size: 2.8rem;
 		color: u.$black;
 		text-decoration: none;
 		transition: color 0.3s;
