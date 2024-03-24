@@ -21,12 +21,6 @@ body {
 	// overflow: hidden;
 }
 
-.black-bars-color,
-.black-bars-color::after,
-.black-bars-color::before {
-	background-color: u.$black;
-}
-
 // BURGER BTN
 .burger-btn {
 	position: fixed;
@@ -118,6 +112,12 @@ body {
 			color: u.$main-color;
 		}
 	}
+}
+
+.black-bars-color,
+.black-bars-color::after,
+.black-bars-color::before {
+	background-color: u.$black;
 }
 
 // HEADER
