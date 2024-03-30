@@ -317,6 +317,53 @@ body {
 	}
 }
 
+//CONTACT
+.contact {
+	&__form {
+		display: flex;
+		flex-direction: column;
+
+		&-top {
+			display: flex;
+			flex-direction: column;
+		}
+
+		&-label {
+			margin-bottom: 0.5em;
+			text-transform: uppercase;
+		}
+
+		&-input {
+			@include u.contactForm;
+		}
+
+		&-textarea {
+			@include u.contactForm;
+
+			max-width: 100%;
+			min-width: 100%;
+			width: 100%;
+			min-height: 150px;
+		}
+
+		&-btn {
+			align-self: center;
+			padding: 1em;
+			width: 100%;
+			max-width: 250px;
+			font-size: 1.4rem;
+			border: 1px solid u.$black;
+			border-radius: 8px;
+			background-color: u.$main-color;
+			cursor: pointer;
+
+			&::before {
+				background-color: u.$highlightedBtn;
+			}
+		}
+	}
+}
+
 @import './utilities/small';
 @import './utilities/medium';
 @import './utilities/large';
