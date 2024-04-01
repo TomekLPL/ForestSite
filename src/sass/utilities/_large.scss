@@ -1,4 +1,8 @@
 @media (min-width: 992px) {
+	html {
+		scroll-padding-top: 103px;
+	}
+
 	.nav {
 		&-desktop {
 			position: sticky;
@@ -133,6 +137,10 @@
 			&-heading {
 				margin-top: 2.6rem;
 				@include u.contactHeadingLarge;
+			}
+
+			&-btn {
+				font-size: 1.8rem;
 			}
 		}
 

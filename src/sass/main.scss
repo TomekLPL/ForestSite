@@ -11,6 +11,7 @@
 html {
 	font-size: 62.5%;
 	scroll-behavior: smooth !important;
+	scroll-padding-top: 0px;
 }
 
 body {
@@ -257,6 +258,7 @@ body {
 			}
 
 			&--highlighted {
+				color: u.$white;
 				background-color: u.$main-color;
 				box-shadow: 2px 2px 5px u.$main-color;
 
@@ -276,12 +278,12 @@ body {
 
 		a {
 			text-decoration: none;
-			color: u.$black;
+			color: u.$main-color;
 			transition: color 0.2s;
 			cursor: pointer;
 
 			&:hover {
-				color: u.$main-color;
+				color: u.$highlightedBtn;
 			}
 		}
 	}
@@ -354,10 +356,12 @@ body {
 			align-self: center;
 			padding: 1em;
 			width: 100%;
-			max-width: 250px;
+			max-width: 200px;
 			font-size: 1.4rem;
-			border: 1px solid u.$black;
+			border: none;
+			box-shadow: 2px 2px 5px rgb(129, 129, 129);
 			border-radius: 8px;
+			color: u.$white;
 			background-color: u.$main-color;
 			cursor: pointer;
 

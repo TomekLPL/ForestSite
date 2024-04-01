@@ -122,6 +122,10 @@
 				margin-top: 3rem;
 				@include u.contactHeadingMedium;
 			}
+
+			&-btn {
+				font-size: 1.6rem;
+			}
 		}
 
 		&__details {
