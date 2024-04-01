@@ -115,4 +115,35 @@
 			}
 		}
 	}
+
+	.contact {
+		&__form {
+			&-heading {
+				margin-top: 3rem;
+				@include u.contactHeadingMedium;
+			}
+		}
+
+		&__details {
+			&-heading {
+				margin-top: 4rem;
+				@include u.contactHeadingMedium;
+			}
+
+			&-adress {
+				padding: 2.4rem 0 1.2rem;
+			}
+
+			p {
+				font-size: 2rem;
+			}
+		}
+
+		&__map {
+			&-heading {
+				margin-top: 4rem;
+				@include u.contactHeadingMedium;
+			}
+		}
+	}
 }

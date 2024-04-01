@@ -23,3 +23,23 @@
 	border-radius: 5px;
 	font-size: 1.6rem;
 }
+
+@mixin contactHeading {
+	text-align: center;
+	text-transform: uppercase;
+	padding: 0.5rem 0 2rem;
+	margin-top: 1rem;
+	margin-bottom: 1rem;
+	font-size: 2rem;
+	color: c.$main-color;
+}
+
+@mixin contactHeadingMedium {
+	padding: 0.5rem 0 2.2rem;
+	font-size: 2.5rem;
+}
+
+@mixin contactHeadingLarge {
+	padding: 0.5rem 0 2.4rem;
+	font-size: 3rem;
+}
