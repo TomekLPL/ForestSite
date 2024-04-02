@@ -52,6 +52,10 @@
 					color: u.$white;
 					background-color: u.$black;
 				}
+
+				&--active {
+					color: u.$main-color;
+				}
 			}
 		}
 	}

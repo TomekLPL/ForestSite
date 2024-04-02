@@ -4,6 +4,8 @@ const allNavItems = document.querySelectorAll('.nav__link');
 const navBtnBars = document.querySelector('.burger-btn__bars');
 const allSections = document.querySelectorAll('.section');
 const footerYear = document.querySelector('.footer__year');
+const navItems = document.querySelectorAll('.nav__link-desktop');
+const scrollSpySections = document.querySelectorAll('.section');
 
 const handleNav = () => {
 	navMobile.classList.toggle('nav-mobile--active');
