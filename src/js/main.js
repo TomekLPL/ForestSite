@@ -53,8 +53,6 @@ const handleScrollSpy = () => {
 
 				const activeSection = document.querySelector(`a[class*="nav__link-desktop-item"][href*="${sections[0].id}"]`);
 
-				console.log(activeSection);
-
 				navItems.forEach(item => item.classList.remove('nav__link-desktop-item--active'));
 
 				activeSection.classList.add('nav__link-desktop-item--active');
