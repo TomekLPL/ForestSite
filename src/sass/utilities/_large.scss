@@ -42,19 +42,21 @@
 
 		&__link {
 			&-desktop {
-				text-decoration: none;
-				font-size: 28px;
-				color: u.$black;
-				padding: 34.5px 40px;
-				transition: background-color 0.3s, color 0.3s;
+				&-item {
+					text-decoration: none;
+					font-size: 28px;
+					color: u.$black;
+					padding: 34.5px 40px;
+					transition: background-color 0.3s, color 0.3s;
 
-				&:hover {
-					color: u.$white;
-					background-color: u.$black;
-				}
+					&:hover {
+						color: u.$white;
+						background-color: u.$black;
+					}
 
-				&--active {
-					color: u.$main-color;
+					&--active {
+						color: u.$main-color;
+					}
 				}
 			}
 		}
