@@ -1,17 +1,17 @@
-const { src, dest, series, parallel, watch } = require('gulp');
-const sass = require('gulp-sass')(require('sass'));
-const postcss = require('gulp-postcss');
-const autoprefixer = require('autoprefixer');
-const cssnano = require('gulp-cssnano');
-const rename = require('gulp-rename');
-const babel = require('gulp-babel');
-const uglify = require('gulp-uglify');
-const imagemin = require('gulp-imagemin');
-const sourcemaps = require('gulp-sourcemaps');
-const clean = require('gulp-clean');
-const kit = require('gulp-kit');
-const browserSync = require('browser-sync').create();
-const reload = browserSync.reload;
+const { src, dest, series, parallel, watch } = require('gulp')
+const sass = require('gulp-sass')(require('sass'))
+const postcss = require('gulp-postcss')
+const autoprefixer = require('autoprefixer')
+const cssnano = require('gulp-cssnano')
+const rename = require('gulp-rename')
+const babel = require('gulp-babel')
+const uglify = require('gulp-uglify')
+const imagemin = require('gulp-imagemin')
+const sourcemaps = require('gulp-sourcemaps')
+const clean = require('gulp-clean')
+const kit = require('gulp-kit')
+const browserSync = require('browser-sync').create()
+const reload = browserSync.reload
 
 const paths = {
 	html: './html/**/*.kit',
@@ -22,7 +22,7 @@ const paths = {
 	sassDest: './dist/css',
 	jsDest: './dist/js',
 	imagesDest: './dist/img',
-};
+}
 
 function sassCompiler(cb) {
 	src(paths.sass)
@@ -32,8 +32,8 @@ function sassCompiler(cb) {
 		.pipe(cssnano())
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(sourcemaps.write())
-		.pipe(dest(paths.sassDest));
-	cb();
+		.pipe(dest(paths.sassDest))
+	cb()
 }
 
 function javaScript(cb) {
@@ -43,23 +43,23 @@ function javaScript(cb) {
 		.pipe(uglify())
 		.pipe(rename({ suffix: '.min' }))
 		.pipe(sourcemaps.write())
-		.pipe(dest(paths.jsDest));
-	cb();
+		.pipe(dest(paths.jsDest))
+	cb()
 }
 
 function convertImg(cb) {
-	src(paths.images).pipe(imagemin()).pipe(dest(paths.imagesDest));
-	cb();
+	src(paths.images).pipe(imagemin()).pipe(dest(paths.imagesDest))
+	cb()
 }
 
 function cleanStuff(cb) {
-	src(paths.dist, { read: false }).pipe(clean());
-	cb();
+	src(paths.dist, { read: false }).pipe(clean())
+	cb()
 }
 
 function handleKits(cb) {
-	src(paths.html).pipe(kit()).pipe(dest('./'));
-	cb();
+	src(paths.html).pipe(kit()).pipe(dest('./'))
+	cb()
 }
 
 function startBrowserSync(cb) {
@@ -67,17 +67,17 @@ function startBrowserSync(cb) {
 		server: {
 			baseDir: './',
 		},
-	});
-	cb();
+	})
+	cb()
 }
 
 function watchForChanges(cb) {
-	watch('./*.html').on('change', reload);
-	watch([paths.html, paths.sass, paths.js], parallel(handleKits, sassCompiler, javaScript)).on('change', reload);
-	watch(paths.images, convertImg).on('change', reload);
-	cb();
+	watch('./*.html').on('change', reload)
+	watch([paths.html, paths.sass, paths.js], parallel(handleKits, sassCompiler, javaScript)).on('change', reload)
+	watch(paths.images, convertImg).on('change', reload)
+	cb()
 }
 
-const mainFunsctions = parallel(handleKits, sassCompiler, javaScript, convertImg);
-exports.cleanStuff = cleanStuff;
-exports.default = series(mainFunsctions, startBrowserSync, watchForChanges);
+const mainFunsctions = parallel(handleKits, sassCompiler, javaScript, convertImg)
+exports.cleanStuff = cleanStuff
+exports.default = series(mainFunsctions, startBrowserSync, watchForChanges)
