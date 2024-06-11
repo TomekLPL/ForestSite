@@ -80,6 +80,6 @@ const subpageSpy = () => {
 }
 
 handleCurrentYear()
-// subpageSpy()
+subpageSpy()
 window.addEventListener('scroll', handleObserver)
 window.addEventListener('scroll', handleScrollSpy)
