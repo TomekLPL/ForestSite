@@ -138,6 +138,21 @@
 		}
 	}
 
+	.offers {
+		&__box {
+			margin: 5em 0;
+
+			&-text {
+				font-size: 2.4rem;
+				margin: 3rem;
+			}
+		}
+
+		&__text {
+			font-size: 2.2rem;
+		}
+	}
+
 	.contact {
 		&__form {
 			&-heading {

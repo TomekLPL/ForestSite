@@ -150,4 +150,38 @@
 			}
 		}
 	}
+
+	.offers {
+		&__box {
+			flex-direction: row;
+			justify-content: space-between;
+
+			&-text {
+				font-size: 2rem;
+				width: 55%;
+				margin: 2rem;
+
+				&--right {
+					text-align: right;
+				}
+			}
+
+			&-img {
+				width: 45%;
+
+				&--right {
+					order: 1; 
+				}
+			}
+		}
+
+		&__img {
+			margin-bottom: 0;
+			max-height: 300px;
+		}
+
+		&__text {
+			font-size: 1.6rem;
+		}
+	}
 }
